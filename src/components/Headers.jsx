@@ -1,4 +1,4 @@
-import logoImg from '../assets/logo.jpeg';
+import logoImg from '../assets/logo.jpg';
 
 export default function Headers() {
     return(
@@ -8,7 +8,7 @@ export default function Headers() {
                 <h1>4Ten Foods</h1>
             </div>
             <nav>
-                <button>Cart</button>
+                <button>Cart (0)</button>
             </nav>
         </header>
     )
