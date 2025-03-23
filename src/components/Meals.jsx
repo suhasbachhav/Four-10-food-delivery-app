@@ -1,17 +1,22 @@
 import MealItem from './MealItem.jsx';
 import useHttp from '../hooks/useHttp.js';
 
+const requestConfig = {};
+
 export default function Meals() {
- const {
-  data : loadedMeals,
-  isLoading,
-  error
+  const {
+    data: loadedMeals,
+    isLoading,
+    error,
+  } = useHttp('http://localhost:3000/meals', requestConfig, []);
 
- } = useHttp("http://localhost:3000/meals", { method: "GET" }, []);
+  if (isLoading) {
+    return <p>Fetching meals...</p>;
+  }
 
- if(isLoading){
-    return <p className="loading">Loading Meals...</p>
- }
+  // if (!data) {
+  //   return <p>No meals found.</p>
+  // }
 
   return (
     <ul id="meals">
