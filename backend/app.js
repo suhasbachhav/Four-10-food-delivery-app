@@ -39,7 +39,9 @@ app.post('/orders', async (req, res) => {
     orderData.customer['postal-code'] === null ||
     orderData.customer['postal-code'].trim() === '' ||
     orderData.customer.city === null ||
-    orderData.customer.city.trim() === ''
+    orderData.customer.city.trim() === '' ||
+    orderData.customer['phone-number'] === null ||
+    orderData.customer['phone-number'].trim() === ''
   ) {
     return res.status(400).json({
       message:
